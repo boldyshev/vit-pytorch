@@ -63,7 +63,9 @@ def main():
     # get dataset
     print('Loading data...')
     data_dir = 'data'
-    train_data = datasets.CIFAR10(root=data_dir, train=True, download=False)
+    os.makedirs(data_dir, exist_ok=True)
+
+    train_data = datasets.CIFAR10(root=data_dir, train=True, download=True)
     train_means, train_stds = train_data.data.mean(axis=(0, 1, 2)) / 255., train_data.data.std(axis=(0, 1, 2)) / 255.
 
     train_transform = transforms.Compose([transforms.ToTensor(),
@@ -74,7 +76,7 @@ def main():
     test_transform = transforms.Compose([transforms.ToTensor(),
                                          transforms.Normalize(train_means, train_stds)
                                          ])
-    train_data = datasets.CIFAR10(root=data_dir, train=True, download=False, transform=train_transform)
+    train_data = datasets.CIFAR10(root=data_dir, train=True, download=True, transform=train_transform)
     train_data, val_data = torch.utils.data.random_split(train_data,
                                                          [45000, 5000],
                                                          generator=torch.Generator().manual_seed(42))
@@ -83,7 +85,7 @@ def main():
     train_loader = DataLoader(train_data, batch_size=batch_size, pin_memory=True)
     val_loader = DataLoader(val_data, batch_size=batch_size, pin_memory=True)
 
-    test_data = datasets.CIFAR10(root=data_dir, train=False, download=False, transform=test_transform)
+    test_data = datasets.CIFAR10(root=data_dir, train=False, download=True, transform=test_transform)
     test_loader = DataLoader(test_data, batch_size=batch_size, pin_memory=True)
 
     # create model, optimizer and learning rate scheduler
