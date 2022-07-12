@@ -1,0 +1,17 @@
+{
+    "model": {
+        "img_size": 32,
+        "patch_size": 4,
+        "channels": 3,
+        "num_classes": 10,
+        "embed_dim": 256,
+        "hidden_dim": 512,
+        "mlp_out": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "drop_rate": 0.2
+    },
+    "optimizer": {
+        "lr": 0.0003
+    }
+}
