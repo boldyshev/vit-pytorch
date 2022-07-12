@@ -76,7 +76,7 @@ def main():
     test_transform = transforms.Compose([transforms.ToTensor(),
                                          transforms.Normalize(train_means, train_stds)
                                          ])
-    train_data = datasets.CIFAR10(root=data_dir, train=True, download=True, transform=train_transform)
+    train_data = datasets.CIFAR10(root=data_dir, train=True, download=False, transform=train_transform)
     train_data, val_data = torch.utils.data.random_split(train_data,
                                                          [45000, 5000],
                                                          generator=torch.Generator().manual_seed(42))
@@ -103,6 +103,7 @@ def main():
     vit.save_model(log=args.log)
 
     # test model
+    print('Testing model...')
     test_acc = vit.test(test_loader)
     print(f'{args.model_name} test accuracy is {test_acc}')
 
