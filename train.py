@@ -35,6 +35,7 @@ parser.add_argument('--log', default=True, type=bool)
 parser.add_argument('--checkpoints', default=True, type=bool)
 
 
+# add all default_hparams keys as parser keyword arguments
 for arg, value in default_hparams['model'].items():
     parser.add_argument(f'--{arg}', default=value, type=type(value))
 parser.add_argument('--lr', default=default_hparams['optimizer']['lr'],

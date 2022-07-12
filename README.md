@@ -28,6 +28,6 @@ Tensorboard [log](https://tensorboard.dev/experiment/y1RbK6PXRx2NCmz6DZwZow/).
 &nbsp;
 
 Repos used:  
-https://github.com/google-research/vision_transformer
-https://github.com/rwightman/pytorch-image-models
+https://github.com/google-research/vision_transformer  
+https://github.com/rwightman/pytorch-image-models  
 https://github.com/FrancescoSaverioZuppichini/ViT
