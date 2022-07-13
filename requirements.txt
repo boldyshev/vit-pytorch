@@ -448,3 +448,6 @@ zlib=1.2.12=h7f8727e_2
 zope=1.0=py39h06a4308_1
 zope.interface=5.4.0=py39h7f8727e_0
 zstd=1.4.9=haebb681_0
+
+torchvision~=0.13.0
+tqdm~=4.64.0
