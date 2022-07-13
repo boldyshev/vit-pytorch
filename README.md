@@ -25,8 +25,11 @@ Dropout: 0.2
 Hyperparameters [models/vit-cifar1/hparams.json](models/vit-cifar1/hparams.json).  
 Tensorboard [log](https://tensorboard.dev/experiment/y1RbK6PXRx2NCmz6DZwZow/).
 
-![train_acc](images/train_acc.png)
-![val_acc](images/val_acc.png)
+Training loss            |  Validation accuracy
+:-------------------------:|:-------------------------:
+![train_loss](images/train_loss.png) |  ![val_acc](images/val_acc.png)
+
+
 
 &nbsp;
 
